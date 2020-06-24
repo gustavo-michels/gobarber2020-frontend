@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+
   * {
     margin: 0;
     padding: 0;
@@ -14,7 +15,7 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  border-style, input, button {
+  body, input, button {
     font-family: 'Roboto Slab', serif;
     font-size: 16px;
   }
