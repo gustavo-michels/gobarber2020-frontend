@@ -1,11 +1,31 @@
 import styled from 'styled-components';
-import { shade } from 'polished';
+import { shade, lighten } from 'polished';
 
 export const Container = styled.div`
-  height: 100vh;
+  > header {
+    height: 144px;
+    background: #28262e;
 
-  display: flex;
-  align-items: stretch;
+    display: flex;
+    align-items: center;
+
+    div {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+
+      svg {
+        color: #999591;
+        width: 25px;
+        height: 25px;
+        transition: color 0.2s;
+
+        &:hover {
+          color: ${lighten(0.2, '#999591')};
+        }
+      }
+    }
+  }
 `;
 
 export const Content = styled.div`
@@ -13,7 +33,7 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   place-content: center;
-  margin: 0 auto;
+  margin: -176px auto 0;
   width: 100%;
 
   form {
@@ -54,7 +74,7 @@ export const AvatarInput = styled.div`
     border-radius: 50%;
   }
 
-  button {
+  label {
     position: absolute;
     width: 48px;
     height: 48px;
@@ -63,11 +83,16 @@ export const AvatarInput = styled.div`
     right: 0;
     bottom: 0;
     border: 0;
+    cursor: pointer;
     transition: background 0.2s;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    input {
+      display: none;
+    }
 
     svg {
       width: 20px;
